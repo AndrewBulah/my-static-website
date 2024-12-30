@@ -12,17 +12,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    
-    - name: Setup Node.js (needed for the deployment)
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'  # Укажите вашу версию Node.js, если это необходимо
 
-    - name: Build (if applicable)
-      run: echo "No build step required for static site"
-
-    - name: Deploy
-      uses: JamesIArmes/github-pages-deploy-action@v4
+    - name: Deploy to GitHub Pages
+      uses: Peaceful Ware/actions-gh-pages@v3
       with:
         branch: gh-pages  # На какой ветке размещаем
         folder: .  # Директория с файлами для развертывания
